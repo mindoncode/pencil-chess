@@ -1,1 +1,18 @@
-<p>board-embed works!</p>
+<div class="mini-bar" *ngIf="role">
+  <span class="mini-role" [class.black]="role === 'black'">
+    {{ role | titlecase }}
+  </span>
+  <span class="mini-turn" [class.ready]="!moveDisabled">
+    {{ moveDisabled ? "Waiting…" : "Your move" }}
+  </span>
+</div>
+
+<ngx-chess-board
+  #board
+  [size]="520"
+  [showCoords]="true"
+  [darkDisabled]="darkDisabled"
+  [lightDisabled]="lightDisabled"
+  (moveChange)="onUserMove()"
+>
+</ngx-chess-board>

@@ -1,0 +1,38 @@
+:host {
+    display: grid;
+    gap: 8px;
+    place-items: center;
+    padding: 12px;
+}
+
+.mini-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    justify-content: center;
+}
+
+.mini-role {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #111;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.mini-role.black {
+    background: #111;
+    color: #fff;
+}
+
+.mini-turn {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.mini-turn.ready {
+    color: #2e7d32;
+    font-weight: 600;
+}

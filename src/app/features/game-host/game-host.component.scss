@@ -1,0 +1,133 @@
+/* Layout */
+.page {
+    max-width: 1200px;
+    margin: 24px auto 32px;
+    padding: 0 16px;
+}
+
+.title {
+    margin: 0 0 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Controls panel */
+.panel.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    margin-bottom: 16px;
+}
+
+.status {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Boards grid */
+.boards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Card wrapper per iframe */
+.board-card {
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+/* Header above each iframe */
+.board-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fafafa;
+}
+
+.role-badge {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #111;
+    font-weight: 600;
+}
+
+.role-badge.black {
+    background: #111;
+    color: #fff;
+}
+
+.hint {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Iframes */
+.board-card iframe {
+    width: 100%;
+    height: 620px;
+    border: 0;
+    display: block;
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #fff;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background: #b71c1c;
+    border-color: #b71c1c;
+    color: #fff;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: grid;
+    place-items: center;
+    z-index: 9999;
+    /* stay above boards */
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    min-width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+}
+
+.card .btn {
+    display: block;
+    margin: 12px auto 0;
+}
+
+/* Responsive: stack boards on narrow screens */
+@media (max-width: 1100px) {
+    .boards-grid {
+        grid-template-columns: 1fr;
+    }
+}

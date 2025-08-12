@@ -1,1 +1,43 @@
-<p>game-host works!</p>
+<div class="page">
+  <h2 class="title">Local game</h2>
+
+  <div class="panel controls">
+    <p class="status">{{ currentTurnText }}</p>
+    <button type="button" class="btn btn-danger" (click)="openOverlay()">
+      Reset game
+    </button>
+  </div>
+
+  <div class="boards-grid">
+    <div class="board-card">
+      <div class="board-header">
+        <span class="role-badge">White</span>
+        <span class="hint">Left board</span>
+      </div>
+      <iframe
+        #frame1
+        title="White board"
+        sandbox="allow-scripts allow-same-origin"
+      ></iframe>
+    </div>
+
+    <div class="board-card">
+      <div class="board-header">
+        <span class="role-badge black">Black</span>
+        <span class="hint">Right board (rotated)</span>
+      </div>
+      <iframe
+        #frame2
+        title="Black board"
+        sandbox="allow-scripts allow-same-origin"
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="overlay" *ngIf="overlayVisible">
+    <div class="card">
+      <h2 style="text-align: center">{{ overlayText }}</h2>
+      <button class="btn" (click)="newGame()">Create new game</button>
+    </div>
+  </div>
+</div>
