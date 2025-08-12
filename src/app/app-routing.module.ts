@@ -23,10 +23,9 @@ export const routes: Routes = [
         (m) => m.OnlineGameComponent,
       ),
   },
-  { path: 'game', redirectTo: 'game/offline', pathMatch: 'full' },
   { path: 'mainpage', redirectTo: 'game/offline', pathMatch: 'full' },
   { path: 'iframepage', redirectTo: 'embed-board', pathMatch: 'full' },
-  { path: '', pathMatch: 'full', redirectTo: 'game' },
+  { path: '**', redirectTo: 'game/offline' },
 ];
 
 @NgModule({
