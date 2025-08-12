@@ -1,1 +1,81 @@
-<p>online-game works!</p>
+<div class="page">
+  <h2 class="title">Online game</h2>
+
+  <!-- Not in a game -->
+  <div class="panel" *ngIf="!role">
+    <div class="row">
+      <button type="button" class="btn btn-primary" (click)="createGame()">
+        Create new game
+      </button>
+    </div>
+
+    <div class="divider"><span>or</span></div>
+
+    <div class="row join-row">
+      <input
+        class="code-input"
+        placeholder="Enter game code"
+        [(ngModel)]="code"
+        spellcheck="false"
+        maxlength="8"
+      />
+      <button type="button" class="btn" (click)="joinGame()">Join game</button>
+    </div>
+
+    <p class="status">{{ statusText }}</p>
+  </div>
+
+  <!-- In a game -->
+  <div class="panel" *ngIf="role">
+    <div class="in-game-bar">
+      <div class="left">
+        <span class="role-badge" [class.black]="role === 'black'">
+          You are {{ role | titlecase }}
+        </span>
+      </div>
+
+      <div class="center">
+        <button
+          type="button"
+          class="code-badge"
+          (click)="copyCode()"
+          [attr.aria-label]="'Copy game code ' + code"
+          [title]="copied ? 'Copied!' : 'Click to copy'"
+        >
+          {{ code }}
+          <span class="hint" *ngIf="copied">Copied!</span>
+        </button>
+      </div>
+
+      <div class="right">
+        <button
+          type="button"
+          class="btn btn-danger-outline"
+          (click)="leaveGame()"
+        >
+          Leave game
+        </button>
+      </div>
+    </div>
+
+    <p class="status">{{ statusText }}</p>
+  </div>
+
+  <div class="board-wrap">
+    <ngx-chess-board
+      #board
+      [size]="520"
+      [showCoords]="true"
+      [darkDisabled]="darkDisabled"
+      [lightDisabled]="lightDisabled"
+      (moveChange)="onUserMove()"
+    ></ngx-chess-board>
+  </div>
+
+  <div class="overlay" *ngIf="overlayVisible">
+    <div class="card">
+      <h2 style="text-align: center">{{ overlayText }}</h2>
+      <button type="button" class="btn" (click)="leaveGame()">Back</button>
+    </div>
+  </div>
+</div>

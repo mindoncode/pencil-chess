@@ -1,0 +1,196 @@
+/* Page */
+.page {
+    max-width: 760px;
+    margin: 24px auto 32px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin: 0 0 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Panels */
+.panel {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.join-row {
+    margin-top: 8px;
+}
+
+/* In-game top bar */
+.in-game-bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 8px;
+}
+
+.in-game-bar .left {
+    justify-self: start;
+}
+
+.in-game-bar .center {
+    justify-self: center;
+}
+
+.in-game-bar .right {
+    justify-self: end;
+}
+
+/* Buttons & inputs */
+.btn {
+    padding: 8px 14px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+.btn-danger {
+    background: #b71c1c;
+    border-color: #b71c1c;
+    color: #fff;
+}
+
+/* Softer danger for inline action */
+.btn-danger-outline {
+    background: #fff;
+    color: #b71c1c;
+    border-color: #b71c1c;
+}
+
+.btn-danger-outline:hover {
+    background: #b71c1c;
+    color: #fff;
+}
+
+.code-input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 200px;
+}
+
+/* Badges */
+.role-badge {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #111;
+    font-weight: 600;
+}
+
+.role-badge.black {
+    background: #111;
+    color: #fff;
+}
+
+.code-badge {
+    padding: 6px 10px;
+    border: 1px dashed #888;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+.code-badge .hint {
+    margin-left: 8px;
+    font-size: 0.9rem;
+    color: #2e7d32;
+}
+
+/* Divider */
+.divider {
+    position: relative;
+    margin: 12px 0;
+    color: #666;
+    font-size: .9rem;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #e6e6e6;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.divider>span {
+    padding: 0 8px;
+    background: #fff;
+}
+
+/* Status text */
+.status {
+    margin: 8px 0 0;
+    font-size: .95rem;
+    color: #555;
+}
+
+/* Board */
+.board-wrap {
+    display: grid;
+    place-items: center;
+    margin-top: 8px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: grid;
+    place-items: center;
+    z-index: 9999;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+    text-align: center;
+}
+
+.card .btn {
+    margin-top: 12px;
+}
